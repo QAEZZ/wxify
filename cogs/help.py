@@ -7,6 +7,7 @@ WXify help
     help                        :   Shows this
     info                        :   Shows information about the client
     latency                     :   Replies with the latency of the client
+    outlook <day: int>          :   Shows SPC's day X outlook
 """
 
 
@@ -21,11 +22,12 @@ class Help(commands.Cog):
         try:
 
             embed: discord.Embed = discord.Embed(
-                title="WXify Help", description="```<required>\n[optional]\n\nTypes of parameters\nstr - all characters\ninteger - numbers only\nbool - true/false```", color=self.eColor)
+                title="WXify Help", description="```<required>\n[optional]\n\nTypes of parameters\nstr - all characters\nint - numbers only\nbool - true/false```", color=self.eColor)
 
             embed.add_field(name="help", value="```Shows this```", inline=True)
             embed.add_field(name="latency", value="```Replies with the latency of the client```", inline=True)
             embed.add_field(name="info", value="```Shows information about the client```", inline=True)
+            embed.add_field(name="outlook <day: int>", value="```Shows SPC's day X outlook```", inline=True)
 
             await ctx.reply(embed=embed)
 

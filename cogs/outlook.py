@@ -43,12 +43,15 @@ class Outlook(commands.Cog):
                         imgs = soup.find_all('img')
                         embed_list = []
 
+
                         for i in imgs:
                             if "gif" in str(i):
                                 image_url = f"https://www.spc.noaa.gov/products/outlook/{i['src']}"
+
                                 embed: discord.Embed = discord.Embed(
-                                    title=i["alt"], color=self.eColor, url=f"https://www.spc.noaa.gov/products/outlook/day{day}otlk.html"
+                                    title=f"Day {day} Convective Outlook", color=self.eColor, url=f"https://www.spc.noaa.gov/products/outlook/day{day}otlk.html"
                                 )
+                                
                                 embed.set_image(url=image_url)
 
                                 embed_list.append(embed)
