@@ -8,6 +8,7 @@ WXify help
     info                        :   Shows information about the client
     latency                     :   Replies with the latency of the client
     outlook <day: int>          :   Shows SPC's day X outlook
+    weather <place: str>        :   Shows current weather for the specified place
 """
 
 
@@ -24,10 +25,11 @@ class Help(commands.Cog):
             embed: discord.Embed = discord.Embed(
                 title="WXify Help", description="```<required>\n[optional]\n\nTypes of parameters\nstr - all characters\nint - numbers only\nbool - true/false```", color=self.eColor)
 
-            embed.add_field(name="help", value="```Shows this```", inline=True)
-            embed.add_field(name="latency", value="```Replies with the latency of the client```", inline=True)
-            embed.add_field(name="info", value="```Shows information about the client```", inline=True)
-            embed.add_field(name="outlook <day: int>", value="```Shows SPC's day X outlook```", inline=True)
+            embed.add_field(name="help", value="```Shows this.```", inline=True)
+            embed.add_field(name="latency", value="```Replies with the latency of the client.```", inline=True)
+            embed.add_field(name="info", value="```Shows information about the client.```", inline=True)
+            embed.add_field(name="outlook <day: int>", value="```Shows SPC's day X outlook.```", inline=True)
+            embed.add_field(name="weather [place: str]", value="```Shows current weather for the specified place.\nDefault location is Chicago.```", inline=True)
 
             await ctx.reply(embed=embed)
 
