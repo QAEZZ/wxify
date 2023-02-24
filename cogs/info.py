@@ -12,16 +12,31 @@ class Info(commands.Cog):
     async def info(self, ctx, switch: str = None):
         try:
 
-            embed: discord.Embed = discord.Embed(
-                title="☁️ About Me", description="```Stay informed about the weather with WXify!\nThe all-in-one Discord client for weather updates, forecasts, and alerts. Get real-time weather conditions for any location, hourly and daily forecasts. WXify makes it easy to stay on top of the weather, no matter where you are in the world.```", color=self.eColor)
+            desc = f"""```Stay informed about the weather with WXify!\nThe all-in-one Discord client for weather updates, forecasts (kinda™), and alerts (soon™). Get real-time weather conditions for any location, hourly (soon™) and daily (soon™) forecasts. WXify makes it easy to stay on top of the weather, no matter where you are in the world.```
+**__Information:__**
+> **Language**
+> **⤷** *[Python](https://python.org)* <:pythonlang:1014273896192671764>
+> 
+> **Wrapper**
+> **⤷** *[discord.py (2.0)](https://github.com/Rapptz/discord.py)* <:discordpy:1077966607067906128>
+> 
+> **License**
+> **⤷** *[MIT](https://opensource.org/license/mit/)* <:mitlicense:1077967201832812634>
+> 
+> **GitHub**
+> **⤷** *[github/QAEZZ](https://github.com/qaezz)* <:github:1077967551360933919>
+> 
+> **GitHub Repository**
+> **⤷** *[QAEZZ/wxify](https://github.com/qaezz/wxify)* <:github:1077967551360933919>
+> 
+> **Creator**
+> **⤷** *Some Guy#2451* <:discord:1077968045789696010>
+"""
 
-            embed.add_field(name="Language", value="> ```Python```", inline=True)
-            embed.add_field(name="Wrapper", value="> ```discord.py (2.0)```", inline=True)
-            embed.add_field(name="License", value="> ```MIT License```", inline=True)
-            embed.add_field(name="GitHub*", value="> [```github/QAEZZ```](https://github.com/qaezz)", inline=True)
-            embed.add_field(name="GitHub Repo*", value="> [```QAEZZ/wxify```](https://github.com/qaezz/wxify)", inline=True)
-            embed.add_field(name="Creator", value="> ```Some Guy#2451```", inline=True)
-            embed.set_footer(text="* value is a hyperlink (clickable)")
+            embed: discord.Embed = discord.Embed(
+                title="☁️ About Me", description=desc, color=self.eColor)
+            
+            embed.set_footer(text="This bot is still in development, expect bugs.")
 
             await ctx.reply(embed=embed)
 

@@ -21,15 +21,38 @@ class Help(commands.Cog):
     @commands.command()
     async def help(self, ctx, switch: str = None):
         try:
+            desc = f"""**<required>**
+**[optional]**
 
-            embed: discord.Embed = discord.Embed(
-                title="WXify Help", description="```<required>\n[optional]\n\nTypes of parameters\nstr - all characters\nint - numbers only\nbool - true/false```", color=self.eColor)
+**__Types of parameters:__**
+> **str** - all characters
+> **int** - numbers only
+> **bool** - true/false
 
-            embed.add_field(name="help", value="```Shows this.```", inline=True)
-            embed.add_field(name="latency", value="```Replies with the latency of the client.```", inline=True)
-            embed.add_field(name="info", value="```Shows information about the client.```", inline=True)
-            embed.add_field(name="outlook <day: int>", value="```Shows SPC's day X outlook.```", inline=True)
-            embed.add_field(name="weather [place: str]", value="```Shows current weather for the specified place.\nDefault location is Chicago.```", inline=True)
+**__Commands:__**
+> **help**
+> **⤷** *Shows this.*
+> 
+> **info**
+> **⤷** *Shows information about the client.*
+> 
+> **credits**
+> **⤷** *Shows APIs and resources the client uses.*
+> 
+> **latency**
+> **⤷** *Replies with the latency of the client.*
+> 
+> **outlook <day: int>**
+> **⤷** *Shows SPC's day X outlook
+>   Ex. wx/outlook 1*
+> 
+> **weather [place: str] (Default location is Chicago)**
+> **⤷** *Shows current weather for the specified place.
+>   Ex. wx/weather new york city*
+"""
+
+            embed: discord.Embed = discord.Embed( # ⤷
+                title="☁️ Help", description=desc, color=self.eColor)
 
             await ctx.reply(embed=embed)
 
